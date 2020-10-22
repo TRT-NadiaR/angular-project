@@ -1,7 +1,7 @@
-//@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100;400&display=swap');
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
 
-//html, body {
-    
-  //  font-family: 'Commisioner', 'sans-serif';
-  
-//}
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

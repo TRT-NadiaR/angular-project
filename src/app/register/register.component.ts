@@ -9,14 +9,16 @@ import { CommonModule } from '@angular/common'
 })
 export class RegisterComponent implements OnInit {
 
-  ageOfChild = ["select age", '9 months','10 months','11 months', '1', '2', '3', '4']
-
-
-  model = new Child (18, 'parent name here', "child name here",this.ageOfChild[0], 'home number', 'mobile number');
+  ageOfChild = ["select age", '9 months','10 months','11 months', '1', '2', '3', '4'];
+  model = new Child (18, '', "",this.ageOfChild[0], '', '');
   submitted = false;
   
   onSubmit() { 
     this.submitted = true; 
+  }
+
+  newChild() {
+    this.model = new Child(10, '', '', '', '', '');
   }
 
   get diagnostic() { 

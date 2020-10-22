@@ -1,31 +1,53 @@
+<div class="container">
+    <div [hidden]="submitted">
 <h2>Register your child here</h2>
+
+{{diagnostic}}
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm"></form>
 
 <div class="form-group">
     <label for="name">Name of parent</label>
     <input type="text" class="form-control" id="nameAdult"
            required
-           [(ngModel)]="model.nameAdult" name="nameAdult">
+           [(ngModel)]="model.nameAdult" name="nameAdult" #nameAdult="ngModel">
+           <div [hidden]="nameAdult.valid"
+           class="alert alert-danger">
+        Parent name is required
+      </div>
           <br>  
+</div>
 
+<div class="form-group">
     <label for="name">Name of child</label>
     <input type="text" class="form-control" id="nameChild"
             required
-            [(ngModel)]="model.nameChild" name="nameChild"><br>
-   
-        <label for="age">Age of child</label>
-        <select class="form-control" id="age" required>
+            [(ngModel)]="model.nameChild" name="nameChild" nameChild="ngModel">
+        </div>
+
+<div class="form-group">
+    <label for="age">Age of child</label>
+    <select class="form-control" id="age" required>
           <option *ngFor="let age of ageOfChild" [value]="age">{{age}}</option>
         </select><br>
-      
-  
-      <label for="contactHome">Contact Number Home</label>
+    </div>
+
+    <div class="form-group">
+    <label for="contactHome">Contact Number Home</label>
     <input type="text" class="form-control" id="contactHome"
             required
             [(ngModel)]="model.contactNumberHome" name="contactHome"><br>
-  
+  </div>
 
-            <label for="contactMob">Contact Number Home</label>
-          <input type="text" class="form-control" id="contactMob"
-                  required
-                  [(ngModel)]="model.contactNumberMobile" name="contactMobile"><br>
-              </div>
+  <div class="form-group">
+    <label for="contactNumberMobile">Contact Number Home</label>
+    <input type="text" class="form-control" id="contactMob"
+                        required
+                        [(ngModel)]="model.contactNumberMobile" name="contactMobile"><br>
+     </div>         
+    
+                        <button (click)="onSubmit()">Submit</button>
+
+                    </div>
+                </div>    
+            
+   

@@ -6,7 +6,7 @@ export class Child {
       public nameChild: string,
       public ageOfChild: string,
       public contactNumberHome: string,
-      public contactNumberMobile: string
+      public contactNumberMobile?: string
     ) {  }
   
   }
