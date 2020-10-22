@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   clickCounter: number = 0;
-  name: string = '';  
-
+  name: string = "";
+  telNumber: number;
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -17,6 +19,10 @@ export class HomeComponent implements OnInit {
 
   countClick() {
     this.clickCounter += 1;
+  }
+
+  resetClicks() {
+    this.clickCounter = 0;
   }
 
 }

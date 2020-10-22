@@ -1,4 +1,6 @@
-span {
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+button {
     font-weight: bold;
     background: lightgray;
     padding: .3em .8em;
@@ -9,9 +11,25 @@ span {
     padding: 3em;
     border: 1px solid lightgray;
     margin-bottom: 1em;
+    
 
     input {
         padding: 1em;
         margin-bottom: 2em;
     }
+}
+
+.form-container {
+    padding: 3.5em;
+    border: 1px solid lightgray;
+    margin-bottom: 1em;
+
+    input {
+        padding: 1em;
+        margin-bottom: 2em;
+    }
+}
+
+p {
+    color: black;
 }

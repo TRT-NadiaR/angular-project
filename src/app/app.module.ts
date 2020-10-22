@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import {HomeComponent} from './home/home.component'
 import { CareersComponent} from './careers/careers.component'
-import { AboutUsComponent} from './about-us/about-us.component'
+import { AboutUsComponent} from './about-us/about-us.component';
+import { RegisterComponent } from './register/register.component'
 
 
 
@@ -14,7 +15,8 @@ import { AboutUsComponent} from './about-us/about-us.component'
     AppComponent,
     HomeComponent,
     CareersComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
