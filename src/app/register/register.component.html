@@ -3,14 +3,14 @@
 <h2>Register your child here</h2>
 
 {{diagnostic}}
-<form (ngSubmit)="onSubmit()" #registerForm="ngForm"></form>
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm">
 
 <div class="form-group">
     <label for="name">Name of parent</label>
     <input type="text" class="form-control" id="nameAdult"
            required
            [(ngModel)]="model.nameAdult" name="nameAdult" #nameAdult="ngModel">
-           <div [hidden]="nameAdult.valid"
+           <div [hidden]="nameAdult.valid || nameAdult.pristine"
            class="alert alert-danger">
         Parent name is required
       </div>
@@ -44,10 +44,38 @@
                         required
                         [(ngModel)]="model.contactNumberMobile" name="contactMobile"><br>
      </div>         
-    
-                        <button (click)="onSubmit()">Submit</button>
-
+   
+                        <!-- <button (click)="onSubmit()">Submit</button> -->
+                        <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">
+                            <i aria-hidden="true"></i> Submit
+                        </button>
+                    </form>
                     </div>
+                
                 </div>    
             
-   
+                <div [hidden]="!submitted">
+                    <h2>You submitted the following:</h2>
+                    <div class="row">
+                      <div class="col-xs-3">Parent Name</div>
+                      <div class="col-xs-9">{{ model.nameAdult }}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-3">Child Name</div>
+                      <div class="col-xs-9">{{ model.nameChild }}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-3">Child's age</div>
+                      <div class="col-xs-9">{{ model.ageOfChild }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">Home contact number</div>
+                        <div class="col-xs-9">{{ model.contactNumberHome }}</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-3">Mobile contact number</div>
+                        <div class="col-xs-9">{{ model.contactNumberMobile }}</div>
+                      </div>
+                    <br>
+                    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+                  </div>
