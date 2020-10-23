@@ -26,7 +26,9 @@
 
 <div class="form-group">
     <label for="age">Age of child</label>
-    <select class="form-control" id="age" required>
+    <select class="form-control" id="age" required 
+    [(ngModel)]="model.ageOfChild" name="age"
+                #age="ngModel">
           <option *ngFor="let age of ageOfChild" [value]="age">{{age}}</option>
         </select><br>
     </div>
