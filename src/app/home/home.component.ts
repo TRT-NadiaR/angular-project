@@ -11,9 +11,14 @@ export class HomeComponent implements OnInit {
   clickCounter: number = 0;
   name: string = "";
   telNumber: number;
+  username: string;
+  pwd: string;
   
   constructor() { }
 
+  login(){
+    console.log('logged in')
+  }
   ngOnInit(): void {
   }
 
