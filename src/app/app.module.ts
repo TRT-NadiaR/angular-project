@@ -7,7 +7,11 @@ import {HomeComponent} from './home/home.component'
 import { CareersComponent} from './careers/careers.component'
 import { AboutUsComponent} from './about-us/about-us.component';
 import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -18,12 +22,16 @@ import { LoginComponent } from './login/login.component'
     CareersComponent,
     AboutUsComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    AddUserComponent,
+    UserDetailsComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

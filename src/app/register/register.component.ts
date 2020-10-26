@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Child } from '../child';
-import { CommonModule } from '@angular/common'
+import {RegisterService} from 'src/app/services/register.service'
+
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,45 @@ export class RegisterComponent implements OnInit {
   ageOfChild = ["select age", '9 months','10 months','11 months', '1', '2', '3', '4'];
   model = new Child (18, '', "",this.ageOfChild[0], '', '');
 
+  register = {
+    name: '', childName: '', phoneMobile:''
+  }
+
   submitted = false;
+
+  constructor(private registerService: RegisterService) { };
+
+  saveTutorial(): void {
+    const data = {
+      title: this.register.name,
+      description: this.register.childName, 
+      phoneMobile: this.register.phoneMobile
+    };
+
+    
+
+    this.registerService.create(data)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  newTutorial(): void {
+    this.submitted = false;
+    this.register = {
+      name: '',
+      childName: '',
+      phoneMobile: ''
+    };
+  }
+
+
+
   
   onSubmit() { 
     this.submitted = true; 
@@ -32,8 +71,6 @@ export class RegisterComponent implements OnInit {
     return JSON.stringify(this.model);
    
   }
-
-  constructor() { }
 
   ngOnInit(): void {
   }

@@ -1,10 +1,10 @@
-<header>
+<!-- <header>
 
 <div class="container">
   <!-- <img src="../assets/images/tiddlywinks-logo.png"   width="100"
   alt="Tiddlywinks Logo"> -->
 
-<a href="#" class="logo">Tiddlywinks Day Nursery</a>
+<!-- <a href="#" class="logo">Tiddlywinks Day Nursery</a>
 <nav>
   <ul>
     <li><a href="#" routerLink="/">Home</a> </li>
@@ -15,8 +15,23 @@
   </ul>
 </nav>
 </div>
-</header>
+</header> --> -->
 
-<div class="container">
-<router-outlet></router-outlet>
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Home</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="users" class="nav-link">Users</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link">Register new user</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <router-outlet></router-outlet>
+  </div>
 </div>
+
