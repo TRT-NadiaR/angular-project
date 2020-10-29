@@ -3,8 +3,39 @@
 <div style="width: 400px; margin: auto;">
     <div class="submit-form">
       <div *ngIf="!submitted">
+
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="username">Username: </label>
+          <input
+            class="form-control"
+            id="username"
+            required
+            [(ngModel)]="user.username"
+            name="username"
+          />
+        </div><br>
+        <div class="form-group">
+          <label for="email">Email: </label>
+          <input
+            class="form-control"
+            id="email"
+            required
+            [(ngModel)]="user.email"
+            name="email"
+          />
+        </div><br>
+        <div class="form-group">
+          <label for="password">Password: </label>
+          <input
+            class="form-control"
+            id="password"
+            required
+            [(ngModel)]="user.password"
+            name="password"
+          />
+        </div><br>
+        <div class="form-group">
+          <label for="name">Parent first name: </label>
           <input
             type="text"
             class="form-control"
@@ -14,17 +45,62 @@
             name="name"
           />
         </div>
+        <div class="form-group">
+          <label for="name">Parent last name: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="adult_lastname"
+            required
+            [(ngModel)]="user.adult_lastname"
+            name="adult_lastname"
+          />
+        </div><br>
   
         <div class="form-group">
-          <label for="childName">Childs Name</label>
+          <label for="childName">Childs first name: </label>
           <input
+            type="text"
             class="form-control"
             id="childName"
             required
             [(ngModel)]="user.childName"
             name="childName"
           />
+        </div><div class="form-group">
+          <label for="childLastName">Childs last name: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="childLastName"
+            required
+            [(ngModel)]="user.childLastName"
+            name="childLastName"
+          />
+        </div><br>
+        <div class="form-group">
+          <label for="phoneHome">Phone number (Home): </label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneHome"
+            required
+            [(ngModel)]="user.phoneHome"
+            name="phoneHome"
+          />
         </div>
+        <div class="form-group">
+          <label for="phoneMob">Phone number (Mobile): </label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneMob"
+            required
+            [(ngModel)]="user.phoneMob"
+            name="phoneMob"
+          />
+        </div><br>
+       
   
         <button (click)="saveUser()" class="btn btn-success">Submit</button>
       </div>

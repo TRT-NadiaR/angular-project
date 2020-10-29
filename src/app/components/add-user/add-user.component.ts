@@ -10,10 +10,11 @@ import {RegisterService} from 'src/app/services/register.service'
 export class AddUserComponent implements OnInit {
 
   user = {
-    name: '', childName: '', published:false
+    name: '', childName: '', published:false, username: '', parentLastName: '', childLastName: '', email: '', phoneHome: '', phoneMob:'', password: ''
   }
 
   submitted = false;
+  loggedin = false;
 
   constructor(private registerService: RegisterService) { };
 
@@ -24,7 +25,15 @@ export class AddUserComponent implements OnInit {
   saveUser(): void {
     const data = {
       name: this.user.name,
-      childName: this.user.childName
+      childName: this.user.childName,
+      username: this.user.username, 
+      parentLastName: this.user.parentLastName,
+      childLastName: this.user.childLastName,
+      email: this.user.email,
+      phoneHome: this.user.phoneHome,
+      phoneMob: this.user.phoneMob,
+      password: this.user.password
+     
     };
 
     this.registerService.create(data)
@@ -43,7 +52,21 @@ export class AddUserComponent implements OnInit {
     this.user = {
       name: '',
       childName: '',
-      published: false
+      published: false,
+      username: '',
+      parentLastName: '', 
+      childLastName: '', 
+      email: '', 
+      phoneHome: '', 
+      phoneMob:'',
+      password: '',
+     
     };
   }
+
+  login(): void {
+this.loggedin = true;
+console.log('you logged in')
+  }
+  
 }

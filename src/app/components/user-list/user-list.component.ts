@@ -13,19 +13,45 @@ export class UserListComponent implements OnInit {
   currentUsers = null;
   currentIndex = -1;
   name = '';
+  loggedIn = false;
+  username = '';
+  password = '';
+
 
   constructor(private registerService: RegisterService) { }
+
+  login(): void {
+
+  }
+
+  onSelect(user): void {
+    this.currentUsers = user;
+  }
 
   ngOnInit(): void {
     this.retrieveUsers();
   }
+
+  searchAll(): void {
+    this.registerService.getAll()
+    .subscribe(
+      data => {
+        this.users = data;
+        console.log('data retrieved from getAll',data);
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+ 
 
   retrieveUsers(): void {
     this.registerService.getAll()
       .subscribe(
         data => {
           this.users = data;
-          console.log(data);
+          //console.log(data);
         },
         error => {
           console.log(error);
@@ -34,6 +60,7 @@ export class UserListComponent implements OnInit {
 
   refreshList(): void {
     this.retrieveUsers();
+    this.searchAll();
     this.currentUsers = null;
     this.currentIndex = -1;
   }
@@ -55,11 +82,15 @@ export class UserListComponent implements OnInit {
         });
   }
 
-  searchTitle(): void {
-    this.registerService.findByTitle(this.name)
+  searchName(): void {
+    console.log('in searchName function')
+    console.log(this.users, 'users')
+    console.log(this.name, 'name')
+    this.registerService.findByName(this.name)
       .subscribe(
         data => {
           this.users = data;
+          
           console.log(data);
         },
         error => {

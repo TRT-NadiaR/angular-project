@@ -23,6 +23,7 @@ export class RegisterService {
     }
 
     create(data): Observable<any> {
+      console.log(data, 'create data')
       return this.http.post(baseUrl, data);
     }
   
@@ -38,8 +39,9 @@ export class RegisterService {
       return this.http.delete(baseUrl);
     }
   
-    findByTitle(title): Observable<any> {
-      return this.http.get(`${baseUrl}?title=${title}`);
+    findByName(name): Observable<any> {
+      console.log(name, 'sending to server')
+      return this.http.get(`${baseUrl}?name=${name}`);
     }
    
 }

@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.clickCounter += 1;
   }
 
-  resetClicks() {
+  logout() {
     this.clickCounter = 0;
   }
 
