@@ -1,9 +1,34 @@
-<h1>Welcome to the home page!</h1>
-
-
-<!-- <input type = 'text' [(ngModel)] = 'username'>
-<input type = 'text' [(ngModel)] = 'pwd'>
-<button (click)='login()'>Login</button> -->
+<div style="width: 400px; margin: 0;">
+    <h2>Log in here</h2>
+    
+    <div class="form-group" >
+      <label for="username">Username: </label>
+      <input type = 'text' [(ngModel)] = 'username' class="form-control">
+      </div>
+    
+    <div class="form-group">
+      <label for="password">Password: </label>
+    <input type = 'password' [(ngModel)] = 'password' class="form-control">
+    
+    </div>
+    
+    <button (click)='login()' >Login</button>
+    </div>
+    
+    <div *ngIf="loggedInAs">
+      <h2>Successfully logged in {{loggedInAs.adult_first_name}}</h2>
+    </div>
+    
+    
+    <div *ngIf="currentUsers">
+      <h2>{{currentUsers.name | uppercase}} Details</h2>
+      <div><span>id: </span>{{currentUsers.id}}</div>
+      <div>
+        <label>name:
+          <input [(ngModel)]="currentUsers.adult_first_name" placeholder="adult_first_name"/>
+        </label>
+      </div>
+    </div>
 
 
 

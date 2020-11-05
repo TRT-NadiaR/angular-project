@@ -1,44 +1,6 @@
 
 <p>user list component</p>
 
-<div style="width: 400px; margin: 0;">
-<h2>Log in here</h2>
-
-<div class="form-group">
-  <label for="username">Username: </label>
-  <input type = 'text' [(ngModel)] = 'username' class="form-control">
-  </div>
-
-<div class="form-group">
-  <label for="password">Password: </label>
-<input type = 'password' [(ngModel)] = 'password' class="form-control">
-
-</div>
-
-<button (click)='login()' >Login</button>
-
-
-
-<!-- <ul class="users">
-  <li *ngFor="let user of users"
-    [class.selected]="user === selectedUser"
-    (click)="onSelect(user)">
-    <span class="badge">{{user.id}}</span> {{user.adult_first_name}} 
-  </li>
-</ul> -->
-</div>
-
-
-
-<div *ngIf="currentUsers">
-  <h2>{{currentUsers.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{currentUsers.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="currentUsers.adult_first_name" placeholder="adult_first_name"/>
-    </label>
-  </div>
-</div>
 
 
 <!-- 
