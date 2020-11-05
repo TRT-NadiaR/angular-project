@@ -8,9 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  clickCounter: number = 0;
-  name: string = "";
-  telNumber: number;
   username: string;
   pwd: string;
   
@@ -22,12 +19,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  countClick() {
-    this.clickCounter += 1;
-  }
+  
 
   logout() {
-    this.clickCounter = 0;
+   
   }
 
 }

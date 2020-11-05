@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RegisterComponent } from 'src/app/register/register.component';
 import {RegisterService} from 'src/app/services/register.service'
+//import { NgxPasswordToggleModule } from 'ngx-password-toggle'
+
+
+
 
 @Component({
   selector: 'app-user-list',
@@ -13,16 +17,43 @@ export class UserListComponent implements OnInit {
   currentUsers = null;
   currentIndex = -1;
   name = '';
-  loggedIn = false;
+  loggedIn: boolean = false;
   username = '';
   password = '';
+  loggedInUser: any;
+  loggedInAs = null;
+  userName2 = String;
+  
+  
+constructor(private registerService: RegisterService) { }
 
+// userInfo(): void {
+//   document.getElementById("userInfo").innerHTML = "Hello JavaScript!";
+// }
 
-  constructor(private registerService: RegisterService) { }
+ 
+login(): void {
+console.log('in login function')
+const data = {
+  username: this.username, 
+  password: this.password
+};
 
-  login(): void {
+this.registerService.checkLoginDetails(data)
+  .subscribe(
+    response => {
+      console.log(response, 'response in function ');
+      this.loggedIn = true;
+      this.loggedInAs = response.status;
 
-  }
+      //console.log(this.userName2, 'username2')
+      console.log(this.loggedInAs, 'logged in info')
+      console.log(this.loggedIn)
+    },
+    error => {
+      console.log(error);
+    });
+}
 
   onSelect(user): void {
     this.currentUsers = user;

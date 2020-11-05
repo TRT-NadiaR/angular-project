@@ -14,6 +14,14 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { } 
 
+    checkLoginDetails(data): Observable<any> {
+
+      console.log('in checkLoginDetails', data)
+      console.log(data.username)
+      console.log(data.password)
+      return this.http.get(`${baseUrl}/logging-in`, {params: data});
+    }
+
     getAll(): Observable<any> {
       return this.http.get(baseUrl);
     }
