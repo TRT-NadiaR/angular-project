@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   loggedInUser: any;
   loggedInAs = null;
   userName2 = String;
-  
+  submitted: boolean = false;
 
 
   ngOnInit(): void {
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
           this.loggedIn = true;
           this.loggedInAs = response.status;
           this.userName2 = this.loggedInAs.adult_first_name;
-          
+          this.submitted = true;
           console.log(this.userName2, 'username2')
           console.log(this.loggedInAs, 'logged in info')
           console.log(this.loggedIn)

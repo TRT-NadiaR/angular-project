@@ -100,12 +100,13 @@
         </div><br>
        
   
-        <button (click)="saveUser()" class="btn btn-success">Submit</button>
+        <button (click)="saveUser()" class="btn btn-success">Submit and register</button>
       </div>
   
       <div *ngIf="submitted">
         <h4>You submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newUser()">Add</button>
+        <button class="btn btn-success" (click)="newUser()">Register </button><br>
+        <a routerLink="/">Login</a>
       </div>
     </div>
   </div>

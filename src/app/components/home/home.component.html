@@ -1,4 +1,7 @@
 <div style="width: 400px; margin: 0;">
+  <div class="submit-form">
+  
+    <div *ngIf="!submitted">
     <h2>Log in here</h2>
     
     <div class="form-group" >
@@ -13,23 +16,30 @@
     </div>
     
     <button (click)='login()' >Login</button>
+    
+  </div>
+
+
+    <div *ngIf="submitted">
+      <h3>Logged in as {{loggedInAs.adult_first_name}}</h3>
+  <p>Registered children:  </p>
+  <p>First Name: {{loggedInAs.child_first_name}}</p>
+  <p>Surname: {{loggedInAs.child_last_name}}</p>
     </div>
     
-    <div *ngIf="loggedInAs">
-      <h2>Successfully logged in {{loggedInAs.adult_first_name}}</h2>
-    </div>
     
-    
-    <div *ngIf="currentUsers">
-      <h2>{{currentUsers.name | uppercase}} Details</h2>
-      <div><span>id: </span>{{currentUsers.id}}</div>
-      <div>
-        <label>name:
-          <input [(ngModel)]="currentUsers.adult_first_name" placeholder="adult_first_name"/>
-        </label>
-      </div>
+   
+</div>
+  </div>
+
+
+
+  <!-- <div *ngIf="currentUsers">
+    <h2>{{currentUsers.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{currentUsers.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="currentUsers.adult_first_name" placeholder="adult_first_name"/>
+      </label>
     </div>
-
-
-
-
+  </div> -->
