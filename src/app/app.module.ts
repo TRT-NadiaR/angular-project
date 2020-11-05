@@ -12,6 +12,7 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -25,7 +26,8 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     AddUserComponent,
     UserDetailsComponent,
-    UserListComponent
+    UserListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
