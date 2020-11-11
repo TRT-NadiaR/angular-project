@@ -1,4 +1,9 @@
+
 <div style="width: 400px; margin: 0;">
+<img src="../../../assets/images/playschool.png" alt="cartoon children smiling">
+
+
+
   <div class="submit-form">
   
     <div *ngIf="!submitted">
@@ -21,8 +26,14 @@
 
 
     <div *ngIf="submitted">
-      <h3>Logged in as {{loggedInAs.adult_first_name}}</h3>
-  <p>Registered children:  </p>
+ 
+
+  <div class="topright">
+       <h3>Logged in as {{loggedInAs.adult_first_name}}</h3>
+ 
+  
+</div>
+ <p>Registered children:  </p>
   <p>First Name: {{loggedInAs.child_first_name}}</p>
   <p>Surname: {{loggedInAs.child_last_name}}</p>
     </div>
