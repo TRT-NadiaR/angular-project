@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   loggedInAs = null;
   userName2 = String;
   submitted: boolean = false;
+  buttonClicked: boolean = false;
 
 
   ngOnInit(): void {
@@ -36,7 +37,7 @@ export class HomeComponent implements OnInit {
       username: this.username, 
       password: this.password
     };
-    
+
     this.registerService.checkLoginDetails(data)
       .subscribe(
         response => {
@@ -45,15 +46,19 @@ export class HomeComponent implements OnInit {
           this.loggedInAs = response.status;
           this.userName2 = this.loggedInAs.adult_first_name;
           this.submitted = true;
-          console.log(this.userName2, 'username2')
-          console.log(this.loggedInAs, 'logged in info')
-          console.log(this.loggedIn)
+          this.buttonClicked = true;
         },
         error => {
           console.log(error);
         });
     }
 
- 
+ logout(): void {
+   this.loggedIn = false;
+   this.submitted = false;
+   this.username = '';
+   this.password = '';
+   this.buttonClicked = false;
+ }
 
 }

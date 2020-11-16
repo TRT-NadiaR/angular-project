@@ -1,6 +1,4 @@
 <div >
-
-  
   <div class="submit-form">
   
     <div *ngIf="!submitted">
@@ -14,13 +12,20 @@
     <input type = 'password' [(ngModel)] = 'password' class="form-control">
     </div>
     
-    <button (click)='login()' >Login</button>
+    
+
+      <button (click)='login()' *ngIf="!buttonClicked">Login</button>
+
     </div>
 
-
     <div *ngIf="submitted">
-      <div class="toprighttext">
+      <div class="submit-form">
        <h3>Logged in as {{loggedInAs.adult_first_name}}</h3>
+     
+
+        <button (click)='logout()'>Log out</button>
+      
+       
      </div>
     </div> 
       
@@ -29,13 +34,13 @@
 <br>
 
   <div class="imgcontainer">
-  <img src="../../../assets/images/banner-873111_1920.jpg" alt="children drawing" style="width:100%;">
-  <div class="text-block">
-    <h4>About us</h4>
-    <p class="white-text"> text here</p>
+  <img src="../../../assets/images/frame-1796294_1920.jpg" alt="children drawing" style="width:100%;">
+  <div class="centered" >
+    <h4 >About us</h4>
+    <p > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras fringilla ullamcorper semper. Duis eu mi semper, imperdiet sem quis, dignissim eros. Donec mattis sed tellus nec malesuada. Nulla at mollis neque, molestie consectetur nibh. Nullam faucibus elit eget tortor iaculis eleifend nec eget nulla. Aliquam dapibus odio vel porta pulvinar. Mauris vitae est in dolor gravida gravida. Morbi quis arcu sed orci dapibus congue a quis quam. Praesent id ex diam. </p>
+    <p > Phasellus at mauris gravida, pulvinar ex ut, hendrerit turpis. Integer laoreet, lorem non lobortis laoreet, sem tortor ullamcorper est, eget bibendum dolor ligula vel massa. Proin vel tellus imperdiet.</p>
   </div>
   </div>
-
 
 </div>
 
