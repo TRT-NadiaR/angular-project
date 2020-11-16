@@ -1,46 +1,45 @@
+<div >
 
-<div style="width: 400px; margin: 0;">
-<img src="../../../assets/images/playschool.png" alt="cartoon children smiling">
-
-
-
+  
   <div class="submit-form">
   
     <div *ngIf="!submitted">
     <h2>Log in here</h2>
-    
     <div class="form-group" >
       <label for="username">Username: </label>
       <input type = 'text' [(ngModel)] = 'username' class="form-control">
       </div>
-    
     <div class="form-group">
       <label for="password">Password: </label>
     <input type = 'password' [(ngModel)] = 'password' class="form-control">
-    
     </div>
     
     <button (click)='login()' >Login</button>
-    
-  </div>
+    </div>
 
 
     <div *ngIf="submitted">
- 
-
-  <div class="topright">
+      <div class="toprighttext">
        <h3>Logged in as {{loggedInAs.adult_first_name}}</h3>
- 
-  
-</div>
- <p>Registered children:  </p>
-  <p>First Name: {{loggedInAs.child_first_name}}</p>
-  <p>Surname: {{loggedInAs.child_last_name}}</p>
-    </div>
-    
-    
-   
-</div>
+     </div>
+    </div> 
+      
   </div>
+
+<br>
+
+  <div class="imgcontainer">
+  <img src="../../../assets/images/banner-873111_1920.jpg" alt="children drawing" style="width:100%;">
+  <div class="text-block">
+    <h4>About us</h4>
+    <p class="white-text"> text here</p>
+  </div>
+  </div>
+
+
+</div>
+
+
+
 
 
